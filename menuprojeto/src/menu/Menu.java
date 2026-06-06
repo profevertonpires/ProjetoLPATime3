@@ -3,18 +3,18 @@ package menu;
 import java.util.Scanner;
 
 public class Menu {
-
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
+	  Scanner scan = new Scanner(System.in);
 
 		System.out.println("Informe a quntidade de palavras que serão inseridas:");
 
 		int qtd = scan.nextInt();
-
+ 
 		String plv[];
 
+		 //aula
 		plv = new String[qtd];
-
+// aula
 		// teste se está criando corretamente
 /*
 		String teste = "teste";
