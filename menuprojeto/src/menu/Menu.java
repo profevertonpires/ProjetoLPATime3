@@ -37,7 +37,7 @@ public class Menu {
 				excluirPalavra(plv,scan);
 				break;
 			case 'd':
-				
+				listarPalavra(plv);
 			    break;
 			case 'e':
 				System.out.println("Saindo do sistema...");
@@ -119,5 +119,18 @@ public class Menu {
 		}
 		
 	}
-    
+	public static void listarPalavra(String ListPalavra[]) {
+		boolean controle = false;
+		for(int i = 0; i < ListPalavra.length; i++) {
+			if(ListPalavra[i] != null){
+				controle = true;
+				System.out.println(ListPalavra[i]);
+			}
+		}
+		if (controle == false) {
+			System.out.println("Não existe palavra nesse vetor");
+		}
+		
+	}
+  
 }
