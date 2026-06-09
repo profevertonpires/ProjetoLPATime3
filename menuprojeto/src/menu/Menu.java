@@ -13,8 +13,7 @@ public class Menu {
 		String plv[];
          
 		 //aula
-		plv = new String[qtd];
-		plv[0]="moura";
+		
 // aula
 		// teste se está criando corretamente
 /*
@@ -76,6 +75,7 @@ public class Menu {
 		}
 
 	}
+	
        public static void alterarPalavra(String[]plv,Scanner scan) {
     	   System.out.println("Qual palavra quer adicionar?");
     	   String plvUser=scan.next();
