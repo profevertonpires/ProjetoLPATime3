@@ -34,7 +34,7 @@ public class Menu {
 				alterarPalavra(plv,scan);
 				break;
 			case 'c':
-				
+				excluirPalavra(plv,scan);
 				break;
 			case 'd':
 				
@@ -75,7 +75,7 @@ public class Menu {
 	
 	public static void alterarPalavra(String[]plv,Scanner scan) {
   	   System.out.println("Qual a palavra que vai ser alterada?");
-  	   String plvUser=scan.next();
+  	   String plvUser=scan.nextLine();
   	   int indice = verificarIdice(plv,plvUser);
   	   if (indice==-1) {
   		   System.out.println("Essa palavra nao existe!");
@@ -83,7 +83,7 @@ public class Menu {
   	    
   	   }
   	   System.out.println("Digite a palavra desejada para substituí-la: ");
-  	   plv[indice]=scan.next();
+  	   plv[indice]=scan.nextLine();
   	   System.out.println("Palavra alterada com sucesso!");
  }
      
@@ -96,5 +96,28 @@ public class Menu {
         }
   	   return -1;
       }
+	
+	public static void excluirPalavra(String[]plv, Scanner scan) {
+		
+		String palavra = " ";
+		boolean plvEncontrada = false;
+		System.out.println("Qual a palavra que você deseja excluir ?");
+		palavra = scan.nextLine();
+		
+		for(int i = 0; i < plv.length; i++) {
+			if(plv[i] != null && palavra.equalsIgnoreCase(plv[i])) {
+				plv[i] = null;
+				System.out.println("Palavra excluida com sucesso na posição: "+i);
+				plvEncontrada = true;
+				break;
+			}
+			
+		}
+		
+		if(plvEncontrada == false) {
+			System.out.println("Palavra não encontrada!");
+		}
+		
+	}
     
 }
