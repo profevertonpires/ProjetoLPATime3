@@ -11,9 +11,10 @@ public class Menu {
 		int qtd = scan.nextInt();
  
 		String plv[];
-
+         
 		 //aula
 		plv = new String[qtd];
+		plv[0]="moura";
 // aula
 		// teste se está criando corretamente
 /*
@@ -60,7 +61,8 @@ public class Menu {
 			case 'a':
 
 			case 'b':
-
+				alterarPalavra(plv,scan);
+                break;
 			case 'c':
 
 			case 'd':
@@ -74,5 +76,27 @@ public class Menu {
 		}
 
 	}
-
+       public static void alterarPalavra(String[]plv,Scanner scan) {
+    	   System.out.println("Qual palavra quer adicionar?");
+    	   String plvUser=scan.next();
+    	   int indice = verificarIdice(plv,plvUser);
+    	   if (indice==-1) {
+    		   System.out.println("Essa palavra nao existe!");
+    		   return;
+    	    
+    	   }
+    	   System.out.println("Qual a palavra que queira trocar ?");
+    	   plv[indice]=scan.next();
+    	   System.out.println("A palavra foi trocada!");
+   }
+        public static int verificarIdice(String[]plv,String plvUser) {
+    	   for (int i=0;i<plv.length;i++) {
+    		   if (plv[i]!=null && plv[i].equals(plvUser)){
+    			   return i;
+    		   
+               }
+          }
+    	   return -1;
+        }
+     	
 }
